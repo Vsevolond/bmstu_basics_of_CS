@@ -1,0 +1,246 @@
+# #!/bin/bash
+# # our comment is here
+# echo "The current directory is:"
+# pwd
+# echo "The user logged in is:"
+# echo "I have \$1 in my pocket"
+
+# grade=5
+# person="Adam"
+# echo "$person is a good boy, he is in grade $grade"
+
+# mydir=$(pwd)
+# echo $mydir
+
+# var1=$(( 5 + 5 ))
+# echo $var1
+# var2=$(( $var1 * 2 ))
+# echo $var2
+
+# user=anotherUser
+# if grep $user /etc/passwd
+# then
+# 	echo "The user $user Exists"
+# elif ls /home
+# then
+# 	echo "The user doesn’t exist but anyway there is a directory under /home"
+# else 
+# 	echo "the user doesn’t exist"
+# fi
+
+# val1="Another text"
+# val2="another text"
+# if [ "$val1" \> "$val2" ]
+# then
+# echo "$val1 is greater than $val2"
+# else
+# echo "$val1 is less than $val2"
+# fi
+
+# val1=6
+# if [ $val1 -gt 5 ]
+# then
+# echo "The test value $val1 is greater than 5"
+# else
+# echo "The test value $val1 is not greater than 5"
+# fi
+
+# mydir=/users/vsevolod
+# if [ -d $mydir ]
+# then
+# echo "The $mydir directory exists"
+# cd $mydir
+# ls
+# else
+# echo "The $mydir directory does not exist"
+# fi
+
+# for var in first second third fourth fifth
+# do
+# echo The  $var item
+# done
+
+# for var in first "the second" "the third" "I’ll do it"
+# do
+# echo "This is: $var"
+# done
+
+# for file in /users/vsevolod/Documents/Scheme/*
+# do
+# if [ -d "$file" ]
+# then
+# echo "$file is a directory"
+# elif [ -f "$file" ]
+# then
+# echo "$file is a file"
+# fi
+# done
+
+# for (( i=1; i <= 10; i++ ))
+# do
+# echo "number is $i"
+# done
+
+# var1=5
+# while [ $var1 -gt 0 ]
+# do
+# echo $var1
+# var1=$[ $var1 - 1 ]
+# done
+
+# for (( a = 1; a <= 3; a++ ))
+# do
+# echo "Start $a:"
+# for (( b = 1; b <= 3; b++ ))
+# do
+# echo " Inner loop: $b"
+# done
+# done
+
+# # IFS=$'\n'
+# # for entry in $(cat /etc/passwd)
+# # do
+# # echo "Values in $entry –"
+# # IFS=:
+# # for value in $entry
+# # do
+# # echo " $value"
+# # done
+# # done
+
+# for var1 in 1 2 3 4 5 6 7 8 9 10
+# do
+# if [ $var1 -eq 5 ]
+# then
+# break
+# fi
+# echo "Number: $var1"
+# done
+
+# var1=1
+# while [ $var1 -lt 10 ]
+# do
+# if [ $var1 -eq 5 ]
+# then
+# break
+# fi
+# echo "Iteration: $var1"
+# var1=$(( $var1 + 1 ))
+# done
+
+# for (( var1 = 1; var1 < 15; var1++ ))
+# do
+# if [ $var1 -gt 5 ] && [ $var1 -lt 10 ]
+# then
+# continue
+# fi
+# echo "Iteration number: $var1"
+# done
+
+# for (( a = 1; a < 10; a++ ))
+# do
+# echo "Number is $a"
+# done > myfile.txt
+# echo "finished."
+
+# if [ -n "$1" ] && [ -n "$2" ]
+# then
+# total=$[ $1 + $2 ]
+# echo The first parameter is $1.
+# echo The second parameter is $2.
+# echo The sum is $total.
+# else
+# echo "No parameters found. "
+# fi
+
+# echo There were $# parameters passed.
+# echo The last parameter was ${!#}
+# echo "Using the \$* method: $*"
+# echo "-----------"
+# echo "Using the \$@ method: $@"
+
+# count=1
+# for param in "$*"
+# do
+# echo "\$* Parameter #$count = $param"
+# count=$(( $count + 1 ))
+# done
+# count=1
+# for param in "$@"
+# do
+# echo "\$@ Parameter #$count = $param"
+# count=$(( $count + 1 ))
+# done
+
+# # count=1
+# # while [ -n "$1" ]
+# # do
+# # echo "Parameter #$count = $1"
+# # count=$(( $count + 1 ))
+# # shift
+# # done
+
+# while [ -n "$1" ]
+# do
+# case "$1" in
+# -a) echo "Found the -a option";;
+# -b) param="$2"
+# echo "Found the -b option, with parameter value $param"
+# shift ;;
+# -c) echo "Found the -c option";;
+# --) shift
+# break ;;
+# *) echo "$1 is not an option";;
+# esac
+# shift
+# done
+# count=1
+# for param in "$@"
+# do
+# echo "Parameter #$count: $param"
+# count=$(( $count + 1 ))
+# done
+
+# # echo -n "Enter your name: "
+# # read name
+# # echo "Hello $name, welcome to my program."
+
+# # read -p "Enter your name: " first last
+# # echo "Your data for $last, $first …"
+
+# # read -p "Enter your name: "
+# # echo Hello $REPLY, welcome to my program.
+
+# # if read -t 3 -p "Enter your name: " name
+# # then
+# # echo "Hello $name, welcome to my script"
+# # else
+# # echo "Sorry, too slow! "
+# # fi
+
+count=0
+while read line
+do
+if ! [ -z $line ] 
+then
+echo "Line $count: $line"
+count=$(( count + 1 ))
+fi
+done < /users/vsevolod/myfile
+echo "Finished: $count"
+
+rec() {
+  if [ -d "$1" ]; then
+    ls "$1" | while read name; do
+      rec "$1/$name"
+    done
+  else
+    echo File "$1"
+  fi
+}
+
+rec "$1"
+
+
+
+

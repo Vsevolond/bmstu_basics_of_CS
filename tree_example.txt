@@ -1,0 +1,137 @@
+[1m/Users/vsevolod/Documents/prostC[0m
+├── pword.c
+├── CMakeLists.txt
+├── .DS_Store
+├── datesort.c
+├── listbsort.c
+├── qmax.c
+├── input.txt
+├── main.c
+├── cluster.c
+├── prog.c
+├── heapsort.c
+├── csort.c
+├── zeroxor.c
+├── merge.c
+├── [1mcmake-build-debug[0m
+│   ├── .DS_Store
+│   ├── prostC.cbp
+│   ├── Makefile
+│   ├── .ninja_deps
+│   ├── cmake_install.cmake
+│   ├── build.ninja
+│   ├── input.txt
+│   ├── prostC
+│   ├── CMakeCache.txt
+│   ├── output.txt
+│   ├── .ninja_log
+│   ├── [1mCMakeFiles[0m
+│   │   ├── cmake.check_cache
+│   │   ├── CMakeOutput.log
+│   │   ├── rules.ninja
+│   │   ├── CMakeError.log
+│   │   ├── TargetDirectories.txt
+│   │   ├── clion-log.txt
+│   │   ├── clion-environment.txt
+│   │   ├── [1mprostC.dir[0m
+│   │   │   ├── rangepeak.c.o
+│   │   │   ├── kmpall.c.o
+│   │   │   ├── intersect.c.o
+│   │   │   ├── listisort.c.o
+│   │   │   ├── pword.c.o
+│   │   │   ├── heapsort.c.o
+│   │   │   ├── listbsort.c.o
+│   │   │   ├── rangehd.c.o
+│   │   │   ├── wcount.c.o
+│   │   │   ├── zeroxor.c.o
+│   │   │   ├── rangemax.c.o
+│   │   │   ├── stackmachine.c.o
+│   │   │   ├── concat.c.o
+│   │   │   ├── maxprod.c.o
+│   │   │   ├── prog.c.o
+│   │   │   ├── radixsort.c.o
+│   │   │   ├── merge.c.o
+│   │   │   ├── ptrie.c.o
+│   │   │   ├── datesort.c.o
+│   │   │   ├── qsstack.c.o
+│   │   │   ├── fibstr.c.o
+│   │   │   ├── rangegcd.c.o
+│   │   │   ├── strdiff.c.o
+│   │   │   ├── saddlepoint.c.o
+│   │   │   ├── fibsys.c.o
+│   │   │   ├── prefixes.c.o
+│   │   │   ├── bmall.c.o
+│   │   │   ├── main.c.o
+│   │   │   ├── power2.c.o
+│   │   │   ├── csort.c.o
+│   │   │   ├── qmax.c.o
+│   │   │   ├── mergesort.c.o
+│   │   │   ├── quicksort.c.o
+│   │   │   ├── cluster.c.o
+│   │   │   ├── primediv.c.o
+│   │   │   └── superstr.c.o
+│   │   ├── [1m3.21.1[0m
+│   │   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   │   ├── CMakeCCompiler.cmake
+│   │   │   ├── CMakeSystem.cmake
+│   │   │   └── [1mCompilerIdC[0m
+│   │   │       ├── CMakeCCompilerId.c
+│   │   │       ├── CMakeCCompilerId.o
+│   │   │       └── [1mtmp[0m
+│   │   └── [1mCMakeTmp[0m
+│   ├── [1mTesting[0m
+│   │   ├── .DS_Store
+│   │   └── [1mTemporary[0m
+│   │       └── LastTest.log
+│   └── [1m.cmake[0m
+│       └── [1mapi[0m
+│           └── [1mv1[0m
+│               ├── [1mreply[0m
+│               │   ├── target-prostC-Debug-be7569375e2d7e81fc78.json
+│               │   ├── directory-.-Debug-f5ebdc15457944623624.json
+│               │   ├── cmakeFiles-v1-6f538934c3d28fe0284c.json
+│               │   ├── codemodel-v2-38c9ef276d73626e9912.json
+│               │   ├── cache-v2-b029fb066fb52e41bd5a.json
+│               │   ├── toolchains-v1-38e7ea8fb0b22a89e16e.json
+│               │   └── index-2022-01-14T07-47-37-0357.json
+│               └── [1mquery[0m
+│                   ├── toolchains-v1
+│                   ├── codemodel-v2
+│                   ├── cmakeFiles-v1
+│                   └── cache-v2
+├── [1m3_module[0m
+│   ├── ptrie.c
+│   ├── stackmachine.c
+│   ├── circbuf.c
+│   ├── qsstack.c
+│   └── listisort.c
+├── [1m1_module[0m
+│   ├── polynom.c
+│   ├── permut.c
+│   ├── binsearch.c
+│   ├── wcount.c
+│   ├── intersect.c
+│   ├── mulmod.c
+│   ├── strdiff.c
+│   ├── peak.c
+│   ├── revarray.c
+│   ├── saddlepoint.c
+│   └── maxk.c
+├── [1m2_module[0m
+│   ├── radixsort.c
+│   ├── bubblesort.c
+│   ├── superstr.c
+│   ├── power2.c
+│   ├── kmpall.c
+│   ├── maxprod.c
+│   ├── shellsort.c
+│   ├── dsort.c
+│   ├── quicksort.c
+│   ├── prefixes.c
+│   └── mergesort.c
+└── [1m.idea[0m
+    ├── .gitignore
+    ├── workspace.xml
+    ├── modules.xml
+    ├── prostC.iml
+    └── misc.xml

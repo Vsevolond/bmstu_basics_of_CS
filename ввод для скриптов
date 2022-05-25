@@ -1,0 +1,13 @@
+cd ~/Documents
+
+
+
+chmod +x ./line-counter
+./line-counter /users/vsevolod/Documents/prostC
+
+chmod +x ./timescript
+./timescript -t 3 -p /Users/vsevolod/Documents/example.sh
+
+python3 tree.py /Users/vsevolod/Documents/prostC
+python3 tree.py -d /Users/vsevolod/Documents/prostC
+python3 tree.py /Users/vsevolod/Documents/prostC -o /Users/vsevolod/Documents/tree_example.txt

@@ -1,0 +1,107 @@
+#!/bin/bash
+
+rec() {
+  if [ -d "$1" ]
+  then
+    ls "$1" | while read name; do
+      rec "$1/$name"
+    done
+  else
+    echo File "$1"
+  fi
+}
+
+error()
+{
+	if [ $# -gt 0 ]
+	then
+		echo $1 1>&2 #stdout в stderr 
+	fi
+	exit 1
+}
+
+number?()
+{
+	if ! [ $# -eq 1 ]
+	then
+		error "number? gets one argument"
+	else
+		if [ $1 -eq $1 ] 2> /dev/null #выбрасываем stderr
+		then
+			return 0
+		else
+			return 1
+		fi
+	fi
+}
+
+args()
+{
+	while [ $# -gt 0 ]
+	do
+		case $1 in
+			-t) 
+				shift 
+				if [ $# -eq 0 ]
+				then
+					error "there is no delay"
+				fi
+				DELAY=$1
+				if ! number? $DELAY
+				then
+					error "delay - is number!"
+				fi
+				shift;;
+
+			-p)
+				shift
+				if [ $# -eq 0 ]
+				then
+					error "where is program-name?"
+				fi
+				PATH_=$1
+				if ! [ -f $PATH_ ]
+				then
+					error "program - is script!"
+				fi
+				shift;;
+
+			*)
+				error "WTF?";;
+		esac
+	done
+
+	if [ -z $DELAY ]
+	then
+		error "delay is zero"
+	fi
+
+	if [ -z $PATH_ ]
+	then
+		error "program-name is empty"
+	fi
+}
+
+main()
+{
+	PID=-1 #идентификатор процесса
+	START=`date +%s`
+	LOGS_FILE="output_$START.log" # формируем ЛОГ-файл для вывода
+	ERRORS_FILE="errors_$START.log" # формируем ЛОГ-файл для ошибок
+
+	while true
+	do
+		if ! ps -p $PID > /dev/null 2>&1 #вывод всех Пидов в пустоту. stderr в stdout
+		then
+			bash $PATH_ 1>>$LOGS_FILE 2>>$ERRORS_FILE & 
+			PID=$! #идентификатор процесса последнего задания
+			echo "Pid: $PID"
+		else
+			echo "why did it end?"
+		fi
+		sleep $DELAY
+	done
+}
+
+args $@
+main
